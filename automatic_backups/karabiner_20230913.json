@@ -3601,7 +3601,7 @@
                         "product_id": 24926,
                         "vendor_id": 7504
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
@@ -3761,7 +3761,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
+            "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
@@ -8185,7 +8185,7 @@
                                         "key_code": "spacebar",
                                         "modifiers": [
                                             "left_shift",
-                                            "left_command"
+                                            "left_control"
                                         ]
                                     }
                                 ],
@@ -8645,7 +8645,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
