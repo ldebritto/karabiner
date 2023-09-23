@@ -286,7 +286,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
@@ -305,7 +305,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Auto generated layer conditions - Left Command is NAV, Right Option is SYM",
+                        "description": "Auto generated layer conditions - Left Command is NAV, Right Command is SYM",
                         "manipulators": [
                             {
                                 "from": {
@@ -327,16 +327,11 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_command"
-                                    }
-                                ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "right_option"
+                                    "key_code": "right_command"
                                 },
                                 "to": [
                                     {
@@ -352,11 +347,6 @@
                                             "name": "sym_layer",
                                             "value": 0
                                         }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "right_option"
                                     }
                                 ],
                                 "type": "basic"
@@ -383,142 +373,6 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "spacebar"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Swap semicolon quote",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "d_numpad",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "swish-mode",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "nav_layer",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 668,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "quote"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "d_numpad",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "swish-mode",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "nav_layer",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "sym_layer",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 668,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "semicolon"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "d_numpad",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "swish-mode",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "nav_layer",
-                                        "type": "variable_unless",
-                                        "value": 1
-                                    },
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 668,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "slash",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "semicolon"
                                     }
                                 ],
                                 "type": "basic"
@@ -1309,7 +1163,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "semicolon",
+                                    "key_code": "quote",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1745,7 +1599,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "slash",
+                                    "key_code": "semicolon",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -2718,7 +2572,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "semicolon",
+                                    "key_code": "quote",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -3204,7 +3058,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "slash",
+                                    "key_code": "semicolon",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -4619,11 +4473,21 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "right_command"
+                                "key_code": "semicolon"
                             },
                             "to": [
                                 {
-                                    "key_code": "spacebar"
+                                    "key_code": "quote"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "slash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "semicolon"
                                 }
                             ]
                         }
@@ -4992,7 +4856,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
+            "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
