@@ -401,6 +401,65 @@
                         ]
                     },
                     {
+                        "description": "Z fn",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24926,
+                                                "vendor_id": 7504
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 668,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "name": "sym_layer",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "nav_layer",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    }
+                                ],"from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 250,
+                                    "basic.to_if_held_down_threshold_milliseconds": 250
+                                },
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "fn"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "z"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "NAV layer",
                         "manipulators": [
                             {
