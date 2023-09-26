@@ -322,6 +322,9 @@
                                             "name": "nav_layer",
                                             "value": 1
                                         }
+                                    },
+                                    {
+                                        "key_code": "cancel"
                                     }
                                 ],
                                 "to_after_key_up": [
@@ -331,12 +334,6 @@
                                             "value": 0
                                         }
                                     }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "cancel"
-                                    }
-
                                 ],
                                 "type": "basic"
                             },
@@ -355,6 +352,9 @@
                                             "name": "sym_layer",
                                             "value": 1
                                         }
+                                    },
+                                    {
+                                        "key_code": "cancel"
                                     }
                                 ],
                                 "to_after_key_up": [
@@ -363,11 +363,6 @@
                                             "name": "sym_layer",
                                             "value": 0
                                         }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "cancel"
                                     }
                                 ],
                                 "type": "basic"
