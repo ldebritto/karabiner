@@ -4042,7 +4042,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "volume_decrement"
+                                        "key_code": "f11"
                                     }
                                 ],
                                 "type": "basic"
@@ -4088,7 +4088,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "volume_increment"
+                                        "key_code": "f12"
                                     }
                                 ],
                                 "type": "basic"
@@ -4338,7 +4338,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "display_brightness_decrement"
+                                        "key_code": "f1"
                                     }
                                 ],
                                 "type": "basic"
@@ -4384,7 +4384,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "display_brightness_increment"
+                                        "key_code": "f2"
                                     }
                                 ],
                                 "type": "basic"
@@ -4476,7 +4476,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "launchpad"
+                                        "key_code": "f4"
                                     }
                                 ],
                                 "type": "basic"
@@ -4522,7 +4522,53 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "dictation"
+                                        "key_code": "f5"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24926,
+                                                "vendor_id": 7504
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 668,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "name": "sym_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "nav_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f6"
                                     }
                                 ],
                                 "type": "basic"
@@ -4568,7 +4614,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "rewind"
+                                        "key_code": "f7"
                                     }
                                 ],
                                 "type": "basic"
@@ -4614,7 +4660,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "play_or_pause"
+                                        "key_code": "f8"
                                     }
                                 ],
                                 "type": "basic"
@@ -4660,7 +4706,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "fastforward"
+                                        "key_code": "f9"
                                     }
                                 ],
                                 "type": "basic"
@@ -4706,7 +4752,7 @@
                                 },
                                 "to": [
                                     {
-                                        "consumer_key_code": "mute"
+                                        "key_code": "f10"
                                     }
                                 ],
                                 "type": "basic"
