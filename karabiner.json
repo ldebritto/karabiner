@@ -3332,7 +3332,7 @@
                         ]
                     },
                     {
-                        "description": "NUM layer",
+                        "description": "FUN/NUM layer",
                         "manipulators": [
                             {
                                 "conditions": [
