@@ -547,7 +547,7 @@
                                     {
                                         "key_code": "tab",
                                         "modifiers": [
-                                            "left_command"
+                                            "right_command"
                                         ]
                                     }
                                 ],
@@ -4996,7 +4996,7 @@
                         "product_id": 24926,
                         "vendor_id": 7504
                     },
-                    "ignore": false,
+                    "ignore": true,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
