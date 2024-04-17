@@ -484,8 +484,8 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 100,
                     "basic.to_delayed_action_delay_milliseconds": 250,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 200,
+                    "basic.to_if_alone_timeout_milliseconds": 250,
+                    "basic.to_if_held_down_threshold_milliseconds": 250,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
@@ -1769,9 +1769,15 @@
                                         ]
                                     }
                                 },
-                                "to": [
+                                "to_if_alone": [
                                     {
                                         "key_code": "volume_decrement"
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "rewind",
+                                        "lazy": true
                                     }
                                 ],
                                 "type": "basic"
@@ -1815,9 +1821,15 @@
                                         ]
                                     }
                                 },
-                                "to": [
+                                "to_if_alone": [
                                     {
                                         "key_code": "play_or_pause"
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "mute",
+                                        "lazy": true
                                     }
                                 ],
                                 "type": "basic"
@@ -1861,9 +1873,14 @@
                                         ]
                                     }
                                 },
-                                "to": [
+                                "to_if_alone": [
                                     {
                                         "key_code": "volume_increment"
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "fastforward"
                                     }
                                 ],
                                 "type": "basic"
@@ -5475,7 +5492,7 @@
                     ]
                 }
             ],
-            "name": "Callum",
+            "name": "Emulando o keymap de meu teclado ZMK",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
