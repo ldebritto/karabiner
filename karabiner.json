@@ -482,13 +482,44 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 100,
+                    "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 250,
-                    "basic.to_if_alone_timeout_milliseconds": 250,
-                    "basic.to_if_held_down_threshold_milliseconds": 250,
+                    "basic.to_if_alone_timeout_milliseconds": 180,
+                    "basic.to_if_held_down_threshold_milliseconds": 180,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
+                    {
+                        "description": "FJ Spotlight",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "f"
+                                        },
+                                        {
+                                            "key_code": "j"
+                                        }
+                                    ]
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Layer conditions - Left Command is NAV, Right Command is SYM, pressing both moves to FUN",
                         "manipulators": [
@@ -782,10 +813,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "close_bracket",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
+                                        "key_code": "volume_increment"
                                     }
                                 ],
                                 "type": "basic"
@@ -1255,10 +1283,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "open_bracket",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
+                                        "key_code": "volume_decrement"
                                     }
                                 ],
                                 "type": "basic"
@@ -1725,7 +1750,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "play_or_pause"
                                     }
                                 ],
                                 "type": "basic"
@@ -1769,15 +1794,9 @@
                                         ]
                                     }
                                 },
-                                "to_if_alone": [
+                                "to": [
                                     {
-                                        "key_code": "volume_decrement"
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "rewind",
-                                        "lazy": true
+                                        "key_code": "f18"
                                     }
                                 ],
                                 "type": "basic"
@@ -1821,15 +1840,12 @@
                                         ]
                                     }
                                 },
-                                "to_if_alone": [
+                                "to": [
                                     {
-                                        "key_code": "play_or_pause"
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "mute",
-                                        "lazy": true
+                                        "key_code": "open_bracket",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1873,14 +1889,12 @@
                                         ]
                                     }
                                 },
-                                "to_if_alone": [
+                                "to": [
                                     {
-                                        "key_code": "volume_increment"
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "fastforward"
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
