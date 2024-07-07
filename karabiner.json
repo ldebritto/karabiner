@@ -343,6 +343,28 @@
                     "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 24926,
+                        "vendor_id": 7504
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 }
             ],
             "fn_function_keys": [
@@ -490,7 +512,7 @@
                 },
                 "rules": [
                     {
-                        "description": "CapsLock to Globe/Escape",
+                        "description": "CapsLock to Hyper/Escape and Hyper-ESC to Capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -503,8 +525,13 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "fn",
-                                        "lazy": true
+                                        "key_code": "right_command",
+                                        "lazy": true,
+                                        "modifiers": [
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
                                     }
                                 ],
                                 "to_if_alone": [
@@ -560,6 +587,64 @@
                                         "modifiers": [
                                             "left_control"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "z/fn on DEF",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24926,
+                                                "vendor_id": 7504
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 668,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "name": "sym_layer",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "nav_layer",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "z",
+                                        "lazy": true
                                     }
                                 ],
                                 "type": "basic"
@@ -2280,7 +2365,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "comma",
+                                        "key_code": "backslash",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -2329,7 +2414,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "period",
+                                        "key_code": "7",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -2522,9 +2607,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "7",
+                                        "key_code": "6",
                                         "modifiers": [
-                                            "left_shift"
+                                            "left_option"
                                         ]
                                     }
                                 ],
@@ -3302,7 +3387,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "backslash",
+                                        "key_code": "2",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -3397,7 +3482,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "2",
+                                        "key_code": "semicolon",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -3503,7 +3588,6 @@
                                 ],
                                 "type": "basic"
                             },
-
                             {
                                 "conditions": [
                                     {
@@ -3547,7 +3631,7 @@
                                     {
                                         "key_code": "hyphen",
                                         "modifiers": [
-                                            "left_shift"
+                                            "right_shift"
                                         ]
                                     }
                                 ],
@@ -4978,7 +5062,6 @@
                                 ],
                                 "type": "basic"
                             },
-
                             {
                                 "conditions": [
                                     {
@@ -5020,37 +5103,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "q",
-                                        "modifiers": [
-                                            "left_control","left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change spacebar to left_shift. (Post spacebar if pressed alone)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "spacebar"
+                                        "key_code": "caps_lock"
                                     }
                                 ],
                                 "type": "basic"
