@@ -507,7 +507,7 @@
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 250,
                     "basic.to_if_alone_timeout_milliseconds": 500,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "basic.to_if_held_down_threshold_milliseconds": 280,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
@@ -940,8 +940,11 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "t"
-                                },
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "optional": ["left_option", "left_control", "left_command"]
+                                    }
+                                    },
                                 "to": [
                                     {
                                         "key_code": "volume_increment"
@@ -1410,7 +1413,10 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "g"
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "optional": ["left_option", "left_control", "left_command"]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -2122,6 +2128,103 @@
                                 "to": [
                                     {
                                         "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "fn"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24926,
+                                                "vendor_id": 7504
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 668,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "name": "sym_layer",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "nav_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "display_brightness_increment",
+                                        "modifiers": [
+                                            "fn"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },{
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24926,
+                                                "vendor_id": 7504
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 668,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    },
+                                    {
+                                        "name": "sym_layer",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "nav_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "display_brightness_decrement",
                                         "modifiers": [
                                             "fn"
                                         ]
@@ -5106,6 +5209,36 @@
                                         "key_code": "caps_lock"
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change spacebar to left_shift. (Post spacebar if pressed alone)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar"
+                                    }
+                                ],
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 1000
+                                },
                                 "type": "basic"
                             }
                         ]
